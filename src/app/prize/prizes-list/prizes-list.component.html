@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="prizes-list.component.css">
+<div class="container-fluid">
+  <div class="bg-light p-5 rounded" *ngIf="!selected && !create">
+    <div class="row">
+      <div class="col-6" style="text-align: left;">
+        <h1 i18n id="titulo">Premios</h1>
+      </div>
+      <div class="col-6" style="text-align: right;">
+        <!-- <a class="btn btn-dark" routerLink="/prizes/list">Regresar</a> -->
+        <button i18n type="button" class="btn btn-secondary"
+        (click)="onCreate()">Crear premio</button>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <table class="table table-stripped">
+      <thead class="thead-secondary">
+        <tr>
+          <th i18n scope="col">Organización</th>
+          <th i18n scope="col">Nombre</th>
+          <th i18n scope="col">Artistas ganadores</th>
+          <th i18n scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of prizes" scope="row">
+          <td>{{p.organization}}</td>
+          <td id="prize{{p.id}}">{{p.name}}</td>
+          <td>{{p.performerPrizes.length}}</td>
+          <td>
+            <button type="button" class="btn bi bi-eye-fill btn-secondary"
+              (click)="onSelected(p.id)"><span i18n>Ver detalle</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+              <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+              <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+            </svg>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bg-light p-5 rounded" *ngIf="selected">
+    <app-prize-detail (cancel)="offSelected()" [prizeDetail]="selectedPrize"></app-prize-detail>
+  </div>
+  <div class="bg-light p-5 rounded" *ngIf="create">
+    <app-prize-create (cancel)="offCreate($event)"></app-prize-create>
+  </div>
+</div>

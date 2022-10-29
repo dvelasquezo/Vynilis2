@@ -1,0 +1,101 @@
+<form [formGroup]="albumForm" (ngSubmit)="createAlbum(albumForm.value)">
+
+  <div class="container-fluid my-3 ">
+
+    <div style="width: 12rem">
+      <div class="row">
+        <div class="col" style="width: 1rem;">
+          <figure> <img style="width: 5rem;" src="/assets/icons/albumes.png" alt="albumes"></figure>
+        </div>
+        <div class="col p-3">
+          <h1 id="titulo" font-weight-bold><ins i18n>Crear</ins></h1>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="p-5 border">
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label i18n id="labelNombre" for="name">
+          Nombre
+        </label>
+        <input novalidate id="name" class="form-control" formControlName="name" i18n-placeholder placeholder="Ingresar nombre Album">
+        <div i18n class="alert alert-danger alert-dismissible fade show"
+          *ngIf="albumForm.get('name').hasError('required') && albumForm.get('name').touched">
+          Nombre requerido
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label id="labelCover" for="cover">
+          Cover
+        </label>
+        <input novalidate id="cover" class="form-control" formControlName="cover" i18n-placeholder placeholder="Ingresar cover">
+        <div i18n class="alert alert-danger alert-dismissible fade show"
+          *ngIf="albumForm.get('cover').hasError('required') && albumForm.get('cover').touched">
+          Cover requerido
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label i18n id="labelFecha" for="releaseDate">
+          Fecha Lanzamiento
+        </label>
+        <input novalidate id="releaseDate" class="form-control" type="date" formControlName="releaseDate" i18n-placeholder
+          placeholder="Ingresar fecha de lanzamiento">
+        <div i18n class="alert alert-danger alert-dismissible fade show"
+          *ngIf="albumForm.get('releaseDate').hasError('required') && albumForm.get('releaseDate').touched">
+          Fecha de lanzamiento requerido
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label i18n id="labelDescripcion" for="description">
+          Descripción
+        </label>
+        <input novalidate id="description" class="form-control" formControlName="description" i18n-placeholder
+          placeholder="Ingresar descripción">
+        <div i18n class="alert alert-danger alert-dismissible fade show"
+          *ngIf="albumForm.get('description').hasError('required') && albumForm.get('description').touched">
+          Descripción requerido
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label i18n id="labelGenero" for="genre">
+          Genero
+        </label>
+        <select id="genre" class="form-control" formControlName="genre">
+          <option *ngFor="let item of generos | keyvalue" [ngValue]="item.value">{{item.value}}</option>
+        </select>
+        <div i18n class="alert alert-danger alert-dismissible fade show"
+          *ngIf="albumForm.get('genre').hasError('required') && albumForm.get('genre').touched">
+          Genero requerido
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label i18n id="labelCasa" for="recordLabel">
+          Casa Discográfica
+        </label>
+        <select id="recordLabel" class="form-control" formControlName="recordLabel">
+          <option *ngFor="let item of casasDisco | keyvalue" [ngValue]="item.value">{{item.value}}</option>
+        </select>
+        <div i18n class="alert alert-danger alert-dismissible fade show"
+          *ngIf="albumForm.get('recordLabel').hasError('required') && albumForm.get('recordLabel').touched">
+          Casa Discográfica requerido
+        </div>
+      </div>
+
+      <div class="row form-inline justify-content-center align-self-center">
+        <button i18n id="botonCrear" type="submit" class="btn btn-secondary mx-3" [disabled]="albumForm.invalid">Crear</button>
+        <div class="divider"></div>
+        <button i18n id="botonCancelar"type="button" class="btn btn-secondary mx-3" (click)="cancelCreation()">Cancelar</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

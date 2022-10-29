@@ -1,0 +1,44 @@
+<div class="col-lg-6 mt-5 mb-5">
+    <h4 i18n class="mb-5">Crear Músico</h4>
+    <form [formGroup]="clientForm" (ngSubmit)="!clientForm.invalid && createMusician(clientForm.value)">
+      <div class="form-group mb-2">
+        <label i18n for="name">Nombre*</label>
+        <input novalidate id="name" class="form-control" formControlName="name" i18n-placeholder placeholder="Ingrese nombre completo del músico"/>
+        <div i18n class="alert alert-danger alert-dismissible fade show" *ngIf="clientForm.get('name').hasError('required') && clientForm.get('name').touched">
+          Nombre requerido
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label i18n for="image">Imagen*</label>
+        <input id="image" type="text" class="form-control" formControlName="image" i18n-placeholder placeholder="Ingrese la url asociada a la imagen del músico"/>
+        <div i18n class="alert alert-danger alert-dismissible fade show" *ngIf="clientForm.get('image').hasError('required') && clientForm.get('image').touched">
+          Imagen requirida
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label i18n for="description"> Descripción* </label>
+        <input id="description" type="text" class="form-control" formControlName="description" i18n-placeholder placeholder="Ingrese la descripción del músico"/>
+        <div i18n class="alert alert-danger alert-dismissible fade show" *ngIf="clientForm.get('description').hasError('required') && clientForm.get('description').touched">
+          Descripción requerida
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label i18n for="birthDate"> Fecha de Nacimiento* </label>
+        <input id="birthDate" type="date" class="form-control" formControlName="birthDate"/>
+        <div i18n class="alert alert-danger alert-dismissible fade show" *ngIf="clientForm.get('birthDate').hasError('required') && clientForm.get('birthDate').touched">
+          Fecha de nacimiento requerida
+        </div>
+      </div>
+      <div class="row m-1 small">
+        <p i18n>* Campos requeridos</p>
+      </div>
+      <div class="row m-1">
+        <button i18n type="submit" class="btn btn-success" [disabled]="!clientForm.valid">
+          Crear
+        </button>
+        <button i18n type="button" class="btn btn-danger ml-3" (click)="cancelCreation()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+</div>

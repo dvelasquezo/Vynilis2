@@ -1,0 +1,57 @@
+<form [formGroup]="collectorForm" (ngSubmit)="agregarCollecionista(collectorForm.value)">
+
+  <div class="container-fluid my-3 ">
+    <div>
+      <div class="row">
+        <div class="col-1">
+          <figure > <img style="width: 5rem;"
+              src="/assets/icons/albumes.png" alt="albumes"></figure>
+        </div>
+        <div class="col-11">
+          <h1 id="titulo" font-weight-bold><ins i18n>Agregar coleccionista</ins></h1>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="p-5 border">
+      <div class="form-group mx-sm-3 mb-2">
+        <label i18n for="id">Nombre coleccionista</label>
+        <select novalidate id="id" class="form-control" formControlName="id">
+          <option *ngFor="let c of collectors" value="{{c.id}}">
+            {{c.name}}
+          </option>
+        </select>
+        <div i18n class="alert alert-danger alert-dismissible fade show"
+            *ngIf="collectorForm.get('id').hasError('required') && collectorForm.get('id').touched">
+            Nombre requerido
+        </div>
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label i18n for="price">Precio álbum</label>
+        <input novalidate id="price" class="form-control" formControlName="price"
+          type="number" />
+        <div i18n class="alert alert-danger alert-dismissible fade show"
+          *ngIf="collectorForm.get('price').hasError('required') && collectorForm.get('price').touched">
+          Precio requerido
+        </div>
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label i18n for="status">Estado</label>
+        <select novalidate id="status" class="form-control" formControlName="status">
+          <option i18n value="Active">Activo</option>
+          <option i18n value="Inactive">Inactivo</option>
+        </select>
+        <div i18n class="alert alert-danger alert-dismissible fade show"
+            *ngIf="collectorForm.get('status').hasError('required') && collectorForm.get('status').touched">
+            Estado requerido
+        </div>
+      </div>
+      <div class="row form-inline justify-content-center align-self-center">
+        <button i18n type="submit" class="btn btn-success mx-3" [disabled]="collectorForm.invalid">Crear</button>
+        <div class="divider"></div>
+        <button i18n type="button" class="btn btn-secondary mx-3" (click)="cancelarOperacion()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</form>

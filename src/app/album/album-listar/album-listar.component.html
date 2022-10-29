@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div *ngIf="!selected">
+    <div style="width: 16rem">
+      <div class="row">
+        <div class="col" style="width: 1rem;">
+          <figure > <img style="width: 5rem;"
+              src="/assets/icons/albumes.png" alt="albumes"></figure>
+        </div>
+        <div class="col p-3">
+          <h1 i18n id="titulo" font-weight-bold><ins>Álbumes</ins></h1>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="border" *ngIf="existenAlbumes">
+      <div class="mt-3 text-center">
+        <a i18n id = "crearAlbum" class="btn btn-secondary  my-2 my-sm-0 ml-2" href="/albums/crear"> Crear Album </a>
+      </div>
+      <div class="row p-4 ">
+        <div class="col" *ngFor="let a of albums">
+          <div class="card text-center" style="width: 20rem;">
+            <img class="card-img-top rounded-circle img-fluid " src="{{a.cover}}" alt="{{a.name}}">
+            <div class="card-body">
+              <h2 class="card-title"><button type="button" class="btn btn-link text-dark" (click)="onSelected(a.id)"><ins>{{a.name}}</ins></button></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border" *ngIf="!existenAlbumes">
+      <div class="row p-3 ">
+        <div class="col">
+          <figure class="text-center"> <img style="width: 15rem;"
+            src="/assets/icons/noExisteAlbumes.png" alt="noExistealbums"></figure>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col">
+          <h2 id="error" class="text-center" font-weight-bold>404</h2>
+        </div>
+      </div>
+      <div class="row p-1 ">
+        <div class="col">
+          <h2 i18n class="text-center" font-weight-bold>No existen álbumes</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="selected">
+    <app-album-detalle (cancelar)="offSelected()" [idAlbumDetalle]="idAlbum"></app-album-detalle>
+  </div>
+
+</div>

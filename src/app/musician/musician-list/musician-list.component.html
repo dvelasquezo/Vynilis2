@@ -1,0 +1,34 @@
+<div class="container">
+  <div *ngIf="!selected">
+    <h1 i18n>Músicos</h1>
+    <br>
+    <div class="row ml-0 mb-4 text-center">
+      <a i18n id="createMusician" class="btn btn-secondary" href="/musicians/create">Crear Músico</a>
+    </div>
+    <div class="row">
+      <input class="form-control" type="text" i18n-placeholder placeholder="Buscar por nombre" style="width: 95%; margin: 0 auto;">
+    </div>
+    <br>
+    <div *ngIf="loading">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+    <div id="musicians" class="row" *ngIf="!loading && musicianExists()">
+      <div class="col-sm-6 col-md-4 col-lg-3 text-center" *ngFor= "let m of musicians">
+        <figure class="figure">
+            <img src="{{m.image}}" (click)="onSelected(m.id)" width="200" height="200" style="border-radius: 50%; cursor: pointer;" alt="{{m.name}}" />
+            <figcaption>{{m.name}}</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div i18n class="text-center" *ngIf="!loading && !musicianExists()">
+      No existen músicos
+    </div>
+  </div>
+  <div *ngIf="selected">
+      <app-musician-detail (backButtonClicked)="unselect()" [musicianId]="selectedMusicianId" ></app-musician-detail>
+  </div>
+</div>

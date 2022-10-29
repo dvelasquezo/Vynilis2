@@ -1,0 +1,48 @@
+<form [formGroup]="trackForm" (ngSubmit)="asociarTrack(trackForm.value)">
+
+  <div class="container-fluid my-3 ">
+
+    <div style="width: 12rem">
+      <div class="row">
+        <div class="col" style="width: 1rem;">
+          <figure> <img style="width: 5rem;" src="/assets/icons/albumes.png" alt="albumes"></figure>
+        </div>
+        <div class="col p-3">
+          <h1 id="titulo" font-weight-bold><ins>Track</ins></h1>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="p-5 border">
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label i18n id="labelNombre" for="name">Nombre</label>
+        <input novalidate id="name" class="form-control" formControlName="name" i18n-placeholder placeholder="Ingresar nombre Track">
+        <div i18n class="alert alert-danger alert-dismissible fade show"
+          *ngIf="trackForm.get('name').hasError('required') && trackForm.get('name').touched">
+          Nombre requerido
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label i18n id="labelDuracion"  for="duration">Duración</label>
+        <input novalidate id="duration" class="form-control" formControlName="duration" i18n-placeholder placeholder="Ingresar duración Track">
+        <div i18n class="alert alert-danger alert-dismissible fade show"
+          *ngIf="trackForm.get('duration').hasError('required') && trackForm.get('duration').touched">
+          Duración Track
+        </div>
+      </div>
+
+      <div class="row form-inline justify-content-center align-self-center">
+        <button i18n id="botonCrearTrack" type="submit" class="btn btn-secondary mx-3" [disabled]="trackForm.invalid">Crear</button>
+        <div class="divider"></div>
+        <button i18n id="botonCancelar" type="button" class="btn btn-secondary mx-3" (click)="cancelCreation()">Cancelar</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

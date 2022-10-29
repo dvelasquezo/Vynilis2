@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="prize-detail.component.css">
+<div class="row">
+  <div class="col-6" style="text-align: left;">
+    <h1 i18n id="header">Detalle premio</h1>
+  </div>
+  <div class="col-6" style="text-align: right;">
+    <!-- <a class="btn btn-dark" routerLink="/prizes/list">Regresar</a> -->
+    <button i18n type="button" class="btn btn-secondary"
+              (click)="regresarLista()">Regresar</button>
+  </div>
+</div>
+<br>
+<hr>
+<div class="row">
+  <div class="col-2">
+    <p i18n>Organización</p>
+  </div>
+  <div class="col-5">
+    <!-- <p class="col-12 form-control">{{prizeDetail.organization}}</p> -->
+    <input class="prizeOrg" type="text" disabled aria-label="org"
+     value="{{prizeDetail.organization}}" class="col-12 form-control">
+  </div>
+  <div class="col-1">
+    <p i18n>Nombre</p>
+  </div>
+  <div class="col-4">
+    <!-- <p id="prizeName" class="col-12 form-control">{{prizeDetail.name}}</p> -->
+    <input class="prizeName" type="text" disabled aria-label="name"
+     value="{{prizeDetail.name}}" class="col-12 form-control">
+  </div>
+  <div class="col-12">
+    <p i18n>Descripción</p>
+  </div>
+  <div class="col-12 text-wrap">
+    <!-- <p class="col-12 form-control">{{prizeDetail.description}}</p> -->
+    <textarea class="prizeDesc" disabled aria-label="desc"
+     value="{{prizeDetail.description}}" class="col-12 form-control"
+      style="resize: none;"></textarea>
+      <br>
+  </div>
+  <hr>
+  <div class="col-12">
+    <h2 i18n>Artistas galardonados</h2>
+    <br>
+  </div>
+  <div class="col-12">
+    <table class="table table-stripped">
+      <thead class="thead-secondary">
+        <tr>
+          <th i18n scope="col">Nombre artista</th>
+          <th i18n scope="col">Fecha premiación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of performers">
+          <td id="artist">{{p.performer.name}}</td>
+          <td>{{p.premiationDate.split('T')[0]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,147 @@
+<div class="container-fluid mt-4">
+
+  <div style="width: 14rem">
+    <div class="row">
+      <div class="col" style="width: 1rem;">
+        <figure> <img style="width: 5rem;" src="/assets/icons/albumes.png" alt="Imagen icono albumes"></figure>
+      </div>
+      <div class="col p-3">
+        <h1 i18n id="titulo" font-weight-bold><ins>Detalle</ins></h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row border">
+    <div class="col-sm-3 p-4">
+      <div class="row ">
+        <figure>
+          <img class="rounded-circle img-fluid " src="{{albumDetalle.cover}}" style="width:31rem;height:31rem;"
+            alt="Imagen cover albumes">
+        </figure>
+      </div>
+    </div>
+    <div class="col-sm-7 p-4">
+      <div class="row">
+        <table summary="Tabla detalle de detalle">
+          <tr>
+            <h2 id="nombre">{{albumDetalle.name }}</h2>
+          </tr>
+          <tr>
+            <p>{{albumDetalle.description}}</p>
+          </tr>
+        </table>
+        <table class="table table-striped" summary="Tabla detalle de album">
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th i18n scope="col">Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td i18n> Genero</td>
+              <td id="genero">{{albumDetalle.genre }}</td>
+            </tr>
+            <tr>
+              <td i18n> Fecha Lanzamiento</td>
+              <td id="fecha">{{albumDetalle.releaseDate | date}}</td>
+            </tr>
+            <tr>
+              <td i18n> Interprete/Grupo</td>
+              <td i18n *ngIf="sinPerformers">Sin asignar</td>
+              <td *ngIf="!sinPerformers">{{albumDetalle.performers[0].name}}</td>
+            </tr>
+            <tr>
+              <td i18n> Casa Discográfica</td>
+              <td id="casaDis">{{albumDetalle.recordLabel}}</td>
+            </tr>
+            <tr>
+              <td i18n>Canciones</td>
+              <td><a i18n id= "verTrackId" class="link-primary" (click)="mostrarTrack()">Ver</a></td>
+            </tr>
+            <tr>
+              <td i18n>Coleccionistas</td>
+              <td><a i18n class="link-primary" (click)="mostrarCollectors()">Ver</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <button i18n id="regresar"type="button" class="btn btn-secondary" (click)="regresarLista()">Regresar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+
+  <div *ngIf="verTrack" class="row border my-4">
+    <div class="col-sm-3 p-4 ">
+      <div class="row ">
+      </div>
+    </div>
+    <div class="col-sm-7 p-4">
+      <div class="row">
+        <h2 i18n id="tituloCanciones">Canciones</h2>
+        <table class="table table-striped" summary="Tabla detalle de tracks">
+          <thead>
+            <tr>
+              <th i18n scope="col">Nombre</th>
+              <th i18n scope="col">Duración</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let t of albumDetalle.tracks">
+              <td> {{t.name}}</td>
+              <td>{{t.duration}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <a i18n id= "botonCrearTrack" class="btn btn-secondary  my-2 my-sm-0 ml-2" [routerLink]="['/albums/asociarTrack', albumDetalle.id]">
+            Crear </a>
+          <button i18n id="cerrarTracks" type="button" class="btn btn-secondary ml-3" (click)="cerrarTracks()">Cerrar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+  <div  *ngIf="verCollector" class="row border my-4">
+    <div class="col-sm-3 p-4 ">
+      <div class="row ">
+      </div>
+    </div>
+    <div class="col-sm-7 p-4">
+      <div class="row">
+        <h2 i18n id="tituloCanciones">Coleccionistas</h2>
+        <table class="table table-striped" summary="Tabla detalle coleccionistas">
+          <thead>
+            <tr>
+              <th i18n scope="col">Nombre</th>
+              <th i18n scope="col">Precio</th>
+              <th i18n scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of coleccionistas">
+              <td> {{c.collector.name}}</td>
+              <td>{{c.price}}</td>
+              <td i18n *ngIf="c.status == 'Active'">Activo</td>
+              <td i18n *ngIf="c.status == 'Inactive'">Inactivo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <a i18n class="btn btn-secondary  my-2 my-sm-0 ml-2" [routerLink]= "['/albums/coleccionista', albumDetalle.id]">Agregar</a>
+          <button i18n type="button" class="btn btn-secondary ml-3" (click)="cerrarCollectors()">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

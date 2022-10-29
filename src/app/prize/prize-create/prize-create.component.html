@@ -1,0 +1,57 @@
+<form [formGroup]="prizeForm" (ngSubmit)="!prizeForm.invalid && createPrize(prizeForm.value)">
+  <div class="row">
+    <div class="col-6" style="text-align: left;">
+      <h1 i18n id="header">Crear premio</h1>
+    </div>
+    <div class="col-3" style="text-align: right;">
+      <button i18n type="submit" class="btn btn-success" [disabled]="!prizeForm.valid">Crear premio</button>
+    </div>
+    <div class="col-3" style="text-align: right;">
+      <button i18n type="button" class="btn btn-secondary" (click)="regresarLista(0)">Cancelar</button>
+    </div>
+  </div>
+  <br>
+  <hr>
+  <div class="row">
+    <div class="col-2 form-group">
+      <label i18n for="organization">Organización</label>
+      <!--  <p>Organización</p> -->
+    </div>
+    <div class="col-5 form-group">
+      <!-- <p class="col-12 form-control">{{prizeDetail.organization}}</p> -->
+      <input class="prizeOrg" type="text" aria-label="org" novalidate id="organization" class="col-12 form-control" i18n-placeholder
+        placeholder="Organización que otorga el premio" formControlName="organization">
+      <div i18n class="alert alert-danger alert-dismissible fade show" *ngIf="prizeForm.get('organization').hasError('required') &&
+        prizeForm.get('organization').touched">
+        Campo obligatorio
+      </div>
+    </div>
+    <div class="col-1 form-group">
+      <label i18n for="name">Nombre</label>
+      <!-- <p>Nombre</p> -->
+    </div>
+    <div class="col-4 form-group">
+      <!-- <p id="prizeName" class="col-12 form-control">{{prizeDetail.name}}</p> -->
+      <input class="prizeName" type="text" aria-label="name" novalidate id="name" class="col-12 form-control" i18n-placeholder
+        placeholder="Nombre del premio" formControlName="name">
+      <div i18n class="alert alert-danger alert-dismissible fade show" *ngIf="prizeForm.get('name').hasError('required') &&
+        prizeForm.get('name').touched">
+        Campo obligatorio
+      </div>
+    </div>
+    <div class="col-12 form-group">
+      <label i18n for="description">Descripción</label>
+      <!-- <p>Descripción</p> -->
+    </div>
+    <div class="col-12 form-group">
+      <!-- <p class="col-12 form-control">{{prizeDetail.description}}</p> -->
+      <textarea class="prizeDesc" aria-label="desc" novalidate id="description" class="col-12 form-control"
+        style="resize: none;" formControlName="description" i18n-placeholder placeholder="Descripción del premio"></textarea>
+      <div i18n class="alert alert-danger alert-dismissible fade show" *ngIf="prizeForm.get('description').hasError('required') &&
+        prizeForm.get('description').touched">
+        Campo obligatorio
+      </div>
+      <br>
+    </div>
+  </div>
+</form>

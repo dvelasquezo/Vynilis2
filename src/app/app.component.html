@@ -1,0 +1,84 @@
+<div class="container-fluid">
+  <div>
+    <header>
+      <nav class="navbar navbar-light navbar-expand-lg row " style="background-color: hsl(213, 71%, 80%); ">
+
+        <div class="navbar-nav col-1 ml-10">
+          <img style="width: 3rem; " src="../assets/icons/logo.ico" class="figure-img" alt="Logo de Vinilo">
+          <h2 i18n class="ml-3 pt-2">Vinilo</h2>
+        </div>
+
+        <div class="navbar-nav col-6 ml-6">
+          <a id="home-navbar-item" class="nav-item nav-link active" routerLink="/">
+            <h3>Home</h3>
+          </a>
+          <a id="albums-navbar-item" class="nav-item nav-link active" routerLink="/albums/list">
+            <h3 i18n>Álbumes</h3>
+          </a>
+          <a id="authors-navbar-item" class="nav-item nav-link active" routerLink="/musicians/list">
+            <h3 i18n>Músicos</h3>
+          </a>
+          <a id="editorials-navbar-item" class="nav-item nav-link active" routerLink="/prizes/list">
+            <h3 i18n>Premios</h3>
+          </a>
+        </div>
+
+        <div class="navbar-nav col ml-3">
+          <form class="form-inline ">
+            <input class="form-control mr-sm-2" type="search" i18n-placeholder placeholder="Buscar" aria-label="Search">
+            <button i18n class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+          </form>
+        </div>
+
+        <div class="navbar-nav col-2 ml-10 pt-1">
+          <form class="form-inline ">
+            <button i18n class="btn btn-secondary my-2 my-sm-0 ml-2" type="submit">Ingresar</button>
+            <button i18n class="btn btn-secondary my-2 my-sm-0 ml-2" type="submit">Crear</button>
+            <img style="width: 3rem; " src="../assets/icons/ayuda.png" class="figure-img ml-4" alt="Ayuda">
+          </form>
+
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <!-- Main Router Outlet -->
+  <div class="container-fluid" id="principal">
+    <div class="row">
+      <div class="col" style="min-height: 300px;">
+        <div>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="text-center text-white" style="background-color:  hsl(213, 71%, 80%); ">
+    <div class="container pt-4">
+      <section class="mb-4">
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark">
+          <img style="width: 4rem; " src="../assets/icons/facebook.png" class="figure-img ml-4" alt="Facebook"></a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+          data-mdb-ripple-color="dark"><img style="width: 3rem; " src="../assets/icons/twiter.png"
+            class="figure-img ml-4" alt="Twitter"></a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+          data-mdb-ripple-color="dark"><img style="width: 3rem; " src="../assets/icons/Gmail.png"
+            class="figure-img ml-4" alt="Google"></a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+          data-mdb-ripple-color="dark"><img style="width: 3rem; " src="../assets/icons/instagram.png"
+            class="figure-img ml-4" alt="Google"></a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+          data-mdb-ripple-color="dark"><img style="width: 3rem; " src="../assets/icons/linkedin.png"
+            class="figure-img ml-4" alt="Google"></a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+          data-mdb-ripple-color="dark"><img style="width: 3rem; " src="../assets/icons/Github.png"
+            class="figure-img ml-4" alt="Google"></a>
+      </section>
+    </div>
+    <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.1);">
+      <strong>© 2020 Copyright</strong>
+    </div>
+  </footer>
+
+</div>
