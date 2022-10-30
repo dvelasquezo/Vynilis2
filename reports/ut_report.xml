@@ -1,70 +1,4 @@
 <testExecutions version="1">
-  <file path="src/app/album/album-detalle/album-detalle.component.spec.ts">
-    <testCase name="AlbumDetalleComponent Should have an Title element " duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AlbumDetalleComponent should create the component" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/prize/prizes-list/prizes-list.component.spec.ts">
-    <testCase name="PrizesListComponent should create" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="PrizesListComponent Should have an titulo element " duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="PrizesListComponent Should have a prize element " duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/album/album-listar/album-listar.component.spec.ts">
-    <testCase name="AlbumListarComponent getAlbums makes expected calls" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AlbumListarComponent ngOnInit makes expected calls" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AlbumListarComponent selected has default value" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AlbumListarComponent can load instance" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/musician/musician-list/musician-list.component.spec.ts">
-    <testCase name="MusicianListComponent loading changed to true should show loading indicator to the user" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="MusicianListComponent loading changed to false should hide loading indicator to the user" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="MusicianListComponent OnInit when there is one musician should show image and figcaption with name" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="MusicianListComponent OnInit when there are no musicians should show message to user" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/home/home.component.spec.ts">
-    <testCase name="HomeComponent should create" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/musician/musician.service.spec.ts">
-    <testCase name="Service: Musician getMusicians() should return an empty array when there are no musicians" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="Service: Musician createMusician() should return created musician when all required data is provided" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="Service: Musician getMusicians() should return all the musicians when there are musicians" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="Service: Musician getMusician() should return a musician with no albums nor prizes when there is one with the specified id" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
   <file path="src/app/prize/prize-create/prize-create.component.spec.ts">
     <testCase name="PrizeCreateComponent createPrize makes expected calls" duration="1">
       <skipped message="Skipped"/>
@@ -76,11 +10,41 @@
       <skipped message="Skipped"/>
     </testCase>
   </file>
-  <file path="src/app/album/album.service.spec.ts">
-    <testCase name="Service: Album getAlbum(0) should not find a prize" duration="1">
+  <file path="src/app/album/album-detalle/album-detalle.component.spec.ts">
+    <testCase name="AlbumDetalleComponent Should have an Title element " duration="1">
       <skipped message="Skipped"/>
     </testCase>
+    <testCase name="AlbumDetalleComponent should create the component" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/musician/musician.service.spec.ts">
+    <testCase name="Service: Musician createMusician() should return created musician when all required data is provided" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="Service: Musician getMusician() should return a musician with no albums nor prizes when there is one with the specified id" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="Service: Musician getMusicians() should return all the musicians when there are musicians" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="Service: Musician getMusicians() should return an empty array when there are no musicians" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/home/home.component.spec.ts">
+    <testCase name="HomeComponent should create" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/album/album.service.spec.ts">
     <testCase name="Service: Album getAlbums() should return 10 records" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="Service: Album getCollectorAlbum(101) should find 10 records" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="Service: Album asociarColeccionista() should work" duration="1">
       <skipped message="Skipped"/>
     </testCase>
     <testCase name="Service: Album getAlbum(10) should find a album" duration="1">
@@ -89,16 +53,27 @@
     <testCase name="Service: Album create Album should create" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="Service: Album getCollectors should have 10 records" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
     <testCase name="Service: Album track to Album should asociate" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="Service: Album asociarColeccionista() should work" duration="1">
+    <testCase name="Service: Album getAlbum(0) should not find a prize" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="Service: Album getCollectorAlbum(101) should find 10 records" duration="1">
+    <testCase name="Service: Album getCollectors should have 10 records" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/prize/prize.service.spec.ts">
+    <testCase name="Service: Prize getPrize(101) should find a prize" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="Service: Prize getPrizes() should return 10 records" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="Service: Prize getPrize(0) should not find a prize" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="Service: Prize createPrize() should work" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
@@ -110,25 +85,74 @@
       <skipped message="Skipped"/>
     </testCase>
   </file>
-  <file path="src/app/album/abum-track/abum-track.component.spec.ts">
-    <testCase name="AbumTrackComponent can load instance" duration="1">
+  <file path="src/app/prize/prizes-list/prizes-list.component.spec.ts">
+    <testCase name="PrizesListComponent Should have an titulo element " duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="AbumTrackComponent asociarTrack makes expected calls" duration="1">
+    <testCase name="PrizesListComponent Should have a prize element " duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="AbumTrackComponent cancelCreation makes expected calls" duration="1">
+    <testCase name="PrizesListComponent should create" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/prize/prize-detail/prize-detail.component.spec.ts">
+    <testCase name="PrizeDetailComponent Should have a header element " duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="PrizeDetailComponent Should have a prize detail element " duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="PrizeDetailComponent should create" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/album/album-crear/album-crear.component.spec.ts">
+    <testCase name="AlbumCrearComponent can load instance" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AlbumCrearComponent createAlbum makes expected calls" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AlbumCrearComponent cancelCreation makes expected calls" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/musician/musician-detail/musician-detail.component.spec.ts">
+    <testCase name="MusicianDetailComponent OnInit new" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/musician/musician-list/musician-list.component.spec.ts">
+    <testCase name="MusicianListComponent OnInit when there are no musicians should show message to user" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="MusicianListComponent loading changed to true should show loading indicator to the user" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="MusicianListComponent OnInit when there is one musician should show image and figcaption with name" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="MusicianListComponent loading changed to false should hide loading indicator to the user" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/musician/musician-create/musician-create.component.spec.ts">
+    <testCase name="MusicianCreateComponent createMusician should make the right calls to other services" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="MusicianCreateComponent OnInit should show form with controls" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
   <file path="src/app/album/album-collector/album-collector.component.spec.ts">
-    <testCase name="AlbumCollectorComponent cancelarOperacion makes expected calls" duration="1">
+    <testCase name="AlbumCollectorComponent can load instance" duration="1">
       <skipped message="Skipped"/>
     </testCase>
     <testCase name="AlbumCollectorComponent ngAfterContentChecked makes expected calls" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="AlbumCollectorComponent can load instance" duration="1">
+    <testCase name="AlbumCollectorComponent cancelarOperacion makes expected calls" duration="1">
       <skipped message="Skipped"/>
     </testCase>
     <testCase name="AlbumCollectorComponent showSuccess makes expected calls" duration="1">
@@ -138,52 +162,28 @@
       <skipped message="Skipped"/>
     </testCase>
   </file>
-  <file path="src/app/musician/musician-detail/musician-detail.component.spec.ts">
-    <testCase name="MusicianDetailComponent OnInit new" duration="1">
+  <file path="src/app/album/album-listar/album-listar.component.spec.ts">
+    <testCase name="AlbumListarComponent selected has default value" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AlbumListarComponent can load instance" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AlbumListarComponent ngOnInit makes expected calls" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AlbumListarComponent getAlbums makes expected calls" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
-  <file path="src/app/musician/musician-create/musician-create.component.spec.ts">
-    <testCase name="MusicianCreateComponent OnInit should show form with controls" duration="1">
+  <file path="src/app/album/abum-track/abum-track.component.spec.ts">
+    <testCase name="AbumTrackComponent can load instance" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="MusicianCreateComponent createMusician should make the right calls to other services" duration="1">
+    <testCase name="AbumTrackComponent cancelCreation makes expected calls" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-  </file>
-  <file path="src/app/prize/prize-detail/prize-detail.component.spec.ts">
-    <testCase name="PrizeDetailComponent Should have a prize detail element " duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="PrizeDetailComponent should create" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="PrizeDetailComponent Should have a header element " duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/prize/prize.service.spec.ts">
-    <testCase name="Service: Prize createPrize() should work" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="Service: Prize getPrizes() should return 10 records" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="Service: Prize getPrize(101) should find a prize" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="Service: Prize getPrize(0) should not find a prize" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/album/album-crear/album-crear.component.spec.ts">
-    <testCase name="AlbumCrearComponent createAlbum makes expected calls" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AlbumCrearComponent can load instance" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AlbumCrearComponent cancelCreation makes expected calls" duration="1">
+    <testCase name="AbumTrackComponent asociarTrack makes expected calls" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
