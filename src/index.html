@@ -17,3 +17,11 @@
 <script>
   var s = "surprise!</script><script>alert('whoops!')</script>";
 </script>
+
+<script>
+  analytics.identify(
+    '<%= user.id %>',
+    '<%= request.HTTP_REFERER %>',
+    // ...
+  );
+</script>
