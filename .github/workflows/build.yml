@@ -16,7 +16,6 @@ jobs:
         with:
           node-version: 16 # Versión de Node
       - name: Install dependencies
-        working-directory: ./sportApp
         run: |
             npm install --legacy-peer-deps
             npm i -g @angular/cli
