@@ -18,6 +18,7 @@ speed-measure-plugin*.json
 /.idea
 /.scannerwork
 .project
+.angular
 .classpath
 .c9/
 *.launch

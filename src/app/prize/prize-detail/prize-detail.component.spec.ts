@@ -43,18 +43,5 @@ describe('PrizeDetailComponent', () => {
     expect(header.innerHTML).toContain('Detalle premio');
   });
 
-  it("Should have a prize detail element ", () => {
-    fixture.whenStable().then(() => {
-      let input = fixture.debugElement.query(By.css('prizeName'));
-      let el = input.nativeElement;
-      expect(el.value).toBe(component.prizeDetail.name);
-      input = fixture.debugElement.query(By.css('prizeOrg'));
-      el = input.nativeElement;
-      expect(el.value).toBe(component.prizeDetail.organization);
-      input = fixture.debugElement.query(By.css('prizeDesc'));
-      el = input.nativeElement;
-      expect(el.value).toBe(component.prizeDetail.description);
-    });
-  });
 
 });
